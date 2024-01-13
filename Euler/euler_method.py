@@ -11,7 +11,7 @@ def plot_y(t,y):
 
 def solve():
     #Define parameters
-    h=0.005 #Step size
+    h=0.00005 #Step size
     time_steps=5 #Discrete units of time
 
     #Linear Approximation
