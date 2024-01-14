@@ -11,12 +11,18 @@ def plot_y():
     model = DiffEquationModel()
     model.load_state_dict(torch.load("1storder_ode/weights.pth"))
 
-    y_t = t*model(t)
+    A0 = 0
+    y_t = A0+t*model(t)
+    analytic = torch.exp(-t/5)*torch.sin(t)
 
-    plt.plot(t.detach().numpy(), y_t.detach().numpy())
+    plt.plot(t.detach().numpy(), y_t.detach().numpy(), 'orange',
+             label="Neural")
+    plt.plot(t.detach().numpy(), analytic, 'g--', label="Analytic")
+
     plt.xlabel("t")
     plt.ylabel("y(t)")
-    plt.title("Solution using Neural Network")
+    plt.title("Neural and Analytic Solution")
+    plt.legend()
     plt.show()
 
 

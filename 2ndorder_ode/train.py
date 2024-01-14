@@ -43,6 +43,7 @@ def train():
                      [:, None], dtype=torch.float32)
     t = t.view(t.size(0), 1)
 
+    sl = 0
     model.train(True)
     for epoch in range(epochs):
         network_der = 2*model(t)+4*t*network_derivative(t) + \
@@ -60,8 +61,7 @@ def train():
 
         if epoch == 0:
             sl = loss.item()
-
-        if loss.item() < sl:
+        elif loss.item() < sl:
             sl = loss.item()
             torch.save(model.state_dict(), "2ndorder_ode/weights.pth")
 
