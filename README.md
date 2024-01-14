@@ -34,7 +34,8 @@ The repository contains the code and results for the PyTorch Implementation of t
 ## Partial Differential Equations
 ### Equation Considered and Dirichlet Boundary Conditions
 - Equation: $\nabla^2\psi(x,y)=\exp(-x)(x-2+y^3+6y)$
-- Boundary Conditions:$\psi(0,y)=y^3,\psi(1,y)=exp(-1)(1+y^3),\psi(x,0)=x\exp(-x),\psi(x,1)=\exp(-x)(x+1)$
+- Boundary Conditions:$\psi(0,y)=y^3,\psi(1,y)=\exp(-1)(1+y^3),\psi(x,0)=x\exp(-x)$
+  $,\psi=\exp(-x)(x+1)$
 - Neural Trial Solution: $\psi=A(x,y)+x(1-x)y(1-y)N(x,y,\theta)$
   
 ### Graph of Neural and Analytic Solution
