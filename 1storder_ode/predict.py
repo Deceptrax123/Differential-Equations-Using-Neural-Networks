@@ -9,7 +9,7 @@ def plot_y():
     t = t.view(t.size(0), 1)
 
     model = DiffEquationModel()
-    model.load_state_dict(torch.load("neural_network/weights.pth"))
+    model.load_state_dict(torch.load("1storder_ode/weights.pth"))
 
     y_t = t*model(t)
 

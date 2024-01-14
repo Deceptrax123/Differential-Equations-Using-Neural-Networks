@@ -2,7 +2,6 @@ import torch
 from torch import nn
 import numpy as np
 from model import DiffEquationModel
-from initialize import init_weights
 from torch.autograd import grad
 import matplotlib.pyplot as plt
 
@@ -52,7 +51,7 @@ def train():
 
         if loss.item() < sl:
             sl = loss.item()
-            torch.save(model.state_dict(), "neural_network/weights.pth")
+            torch.save(model.state_dict(), "1storder_ode/weights.pth")
 
 
 if __name__ == '__main__':
